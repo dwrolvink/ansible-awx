@@ -49,7 +49,7 @@ ansible-playbook <playbookname> --limit <group name in default inventory> --ask-
 3. Create a new Machine credential, where username is user@DOMAIN.NAME (AD admin)
 4. Add a new playbook to your project (hello_world_windows.yml):  
     - [hello_world_windows.yml](https://raw.githubusercontent.com/dwrolvink/ansible-awx/master/hello_world_windows.yml)
-    > Note: I keep adding extra 'hello worlds' to this file, like win_copy. If you only want to test win_ping, only keep the first task.
+    > Note: I keep adding extra 'hello worlds' to this file, like win_copy. If you only want to test win_ping, only keep the first task. Also be sure to edit any data in there to match your environment.
 5. Create a new template using your inventory of choice, the project your playbook is in, select your playbook (reload your project if you just added the playbook and it doesn't show up yet), and select your windows credential.
 
 ## Run your playbook
