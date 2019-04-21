@@ -1,5 +1,5 @@
 ---
 - name: Hello World Sample Windows
-  hosts: all
+  hosts: Windows_Hosts
   tasks:
     - win_ping:
