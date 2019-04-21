@@ -3,8 +3,6 @@
   hosts: Windows_Hosts
   tasks:
     - win_ping:
-
-- name: Copy a single file
-  win_copy:
-    src: /etc/krb.conf
-    dest: C:\Temp\krb.conf
+    - win_copy:
+      src: /etc/krb.conf
+      dest: C:\Temp\krb.conf
