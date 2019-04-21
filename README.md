@@ -1,6 +1,7 @@
 # ansible-awx
 
 - [Windows modules](https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html)
+- [Ansible - Windows Usage](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html)
 
 # Installing AWX
 - Install Centos 7 with GUI
