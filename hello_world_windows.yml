@@ -1,6 +1,6 @@
 ---
 - name: Hello World Sample Windows
-  hosts: win2019.dwrolvink.com
+  hosts: windows_hosts
   tasks:
         - name: See if window can be reached
           win_ping:
