@@ -1,11 +1,20 @@
 ---
 - name: Hello World Sample Windows
-  hosts: windows_hosts
+  hosts: win2019.dwrolvink.com
   tasks:
-        - name: See if window can be reached
-          win_ping:
+  - name: See if window can be reached
+    win_ping:
 
-        - name: Copy file over to windows host
-          win_copy:
-                src: /etc/krb5.conf
-                dest: C:\Temp\krb5.conf
+  - name: Copy file over to windows host
+    win_copy:
+      src: /etc/krb5.conf
+      dest: C:\Temp\krb5.conf
+      
+  - name: Run powershell and print the result
+    win_shell: whoami
+    args:
+      executable: cmd
+    register: result
+  - debug: var=result.stdout_lines
+  - debug: var=result      
+
