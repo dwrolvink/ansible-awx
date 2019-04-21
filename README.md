@@ -22,6 +22,9 @@ ansible-playbook install.yml -i inventory
 
 # Location installation config
 ~/awx/installer/inventory
+
+# Quick test by running module directly
+ansible windows -m win_ping --ask-vault-pass
 ```
 
 ## Getting kerberos authentication working
