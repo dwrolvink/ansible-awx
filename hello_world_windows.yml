@@ -15,7 +15,8 @@
     args:
       executable: cmd
     register: result
-    changed_when: "result.stdout != 'dwrolvink\\dorus'"
+    changed_when: "'dorus' not in result.stdout"
     
   - debug: var=result      
+
 
