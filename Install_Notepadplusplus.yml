@@ -1,0 +1,19 @@
+---
+# Installation of choc and the disable enhanced exit codes is necessary only temporarily: https://github.com/ansible/ansible/issues/53860#issuecomment-473509704
+- name: Hello World Sample Windows
+  hosts: win2019.dwrolvink.com
+  tasks:
+  - name: install Chocolatey
+    win_chocolatey:
+      name: chocolatey
+      state: present
+
+  - name: disable enhanced exit codes
+    win_chocolatey_feature:
+      name: useEnhancedExitCodes
+      state: disabled
+
+  - name: install notepadplusplus
+    win_chocolatey:
+      name: notepadplusplus
+      state: present
