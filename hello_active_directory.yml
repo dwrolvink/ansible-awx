@@ -1,0 +1,22 @@
+- name: Create OU, Group, and User
+  hosts: all
+  tasks:
+  - name: Ensure the test ou exists
+    win_domain_group:
+      name: OU=TestOU,DC=dwrolvink,DC=com
+      state: present
+      
+  - name: Ensure the group "test" exists
+    win_domain_group:
+      name: CN=TestGroup,OU=TestOU,DC=dwrolvink,DC=com
+      scope: global
+      state: present
+      
+  - name: Ensure user bob is present in test OU, and is member of TestGroup
+    win_domain_user:
+      name: bob
+      password: B0bP4ssw0rd
+      state: present
+      path: OU=TestOU,DC=dwrolvink,DC=com
+      groups:
+        - TestGroup
