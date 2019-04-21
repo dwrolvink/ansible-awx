@@ -25,6 +25,9 @@ ansible-playbook install.yml -i inventory
 
 # Quick test by running module directly
 ansible windows -m win_ping --ask-vault-pass
+
+# Quick test by running playbook
+ansible-playbook <playbookname> --limit <group name in default inventory> --ask-vault-pass 
 ```
 
 ## Getting kerberos authentication working
