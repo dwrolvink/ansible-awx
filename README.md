@@ -7,6 +7,8 @@
 - Install Centos 7 with GUI
 - [Install AWX](https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/) or [Install script](https://gist.github.com/dasgoll/7073664f0f7f73f4aa3e7cf8c95a8dbc)
 
+---
+
 # Managing Windows hosts with AWX
 ## Useful commands and other information
 ```bash
@@ -54,3 +56,20 @@ ansible-playbook <playbookname> --limit <group name in default inventory> --ask-
 
 ## Run your playbook
 That's it, run your playbook, and it should work!. For troubelshooting: be sure to have a close look at the /etc/krb.conf file **in your awx-task container**, and do low level troubleshooting in there too. Make sure you have the right capitalization in your krb.conf file, and your machine credential. You can reload awx by running the installer again (see useful commands above). Make sure the installer doesn't overwrite any changes you made. (DNS settings are set in the awx/installer/inventory file, and the DNS servers don't appear in /etc/resolv.conf on the container (not sure where that's set), though in that file, you should see your domain name listed.
+
+# Elevation and installation of applications
+## Setup Credential to use correct elevation method
+1. Go to your AD credential in AWX
+2. Set `Priviledge Escalation Method` to runas
+3. Set the `Priviledge Escalation Username` and `Priviledge Escalation Password` (the same as the normal user in my case)
+
+## Create the installation playbook
+In my example, we'll be installing notepad++ on the windows host using win_chocolatey
+
+1. Add the following file to your git project:
+  - [install_notepadplusplus.yml](https://raw.githubusercontent.com/dwrolvink/ansible-awx/master/Install_Notepadplusplus.yml)
+2. Update your project in AWX to get the new file
+3. Copy the previous template, and change the name to 'Install Notepad++'
+4. Change the playbook to 'install_notepadplusplus.yml'
+5. Under Options, check `Enable Priviledge Escalation`
+6. Run your template.
