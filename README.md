@@ -47,13 +47,7 @@ ansible-playbook <playbookname> --limit <group name in default inventory> --ask-
   ```
 3. Create a new Machine credential, where username is user@DOMAIN.NAME (AD admin)
 4. Add a new playbook to your project (hello_world_windows.yml):
-  ```bash
-  ---
-  - name: Hello World Sample Windows
-    hosts: windows_hosts
-    tasks:
-      - win_ping:
-  ```
+  [hello_world_windows.yml](https://raw.githubusercontent.com/dwrolvink/ansible-awx/master/hello_world_windows.yml)
 5. Create a new template using your inventory of choice, the project your playbook is in, select your playbook (reload your project if you just added the playbook and it doesn't show up yet), and select your windows credential.
 
 ## Run your playbook
