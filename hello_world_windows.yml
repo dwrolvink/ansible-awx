@@ -1,8 +1,11 @@
 ---
 - name: Hello World Sample Windows
-  hosts: Windows_Hosts
+  hosts: win2019.dwrolvink.com
   tasks:
-    - win_ping:
-    - win_copy:
-      src: /etc/krb.conf
-      dest: C:\Temp\krb.conf
+        - name: See if window can be reached
+          win_ping:
+
+        - name: Copy file over to windows host
+          win_copy:
+                src: /etc/krb5.conf
+                dest: C:\Temp\krb5.conf
