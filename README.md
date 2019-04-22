@@ -73,3 +73,9 @@ In my example, we'll be installing notepad++ on the windows host using win_choco
 4. Change the playbook to 'install_notepadplusplus.yml'
 5. Under Options, check `Enable Priviledge Escalation`
 6. Run your template.
+
+# Working with Active Directory and further exploration
+Check the [Windows modules](https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html) list for hints of what is possible. 
+
+For example, you have `win_domain_group` and `win_domain_user` modules, in the following playbook I use those to create a user and a group in a pre-existing OU (and make the user member of the group):
+- [hello_world_ad.yml](https://github.com/dwrolvink/ansible-awx/blob/master/hello_active_directory.yml)
