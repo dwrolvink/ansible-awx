@@ -3,6 +3,6 @@
   hosts: win2019.dwrolvink.com
   tasks:
   - name: Run powershell and print the result
-    win_shell: C:\awx-test\arg.ps1 -id 1
+    win_shell: C:\awx-test\arg.ps1 -id {{ id }}
     register: result
     changed_when: "'dorus' not in result.stdout"
