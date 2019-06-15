@@ -107,6 +107,8 @@ vcenter_datacenter: "Datacenter"  # Name of your datacenter
 vcenter_vm_folder: "/" # Look in Menu/VMs and Templates, and use the folder structure from there (not the datastore)
 
 vcenter_network_name: "VM Network" # This is the default network
+dns_server_list: ["x.x.x.x"] # I have only one DNS server in my environment
+dns_suffixes: ["{{ domain_name }}"] 
 
 domain_username: "domain\\domainuser" # User should have rights to join servers
 domain_password: "StronkPassword123" # Password of the domain user
