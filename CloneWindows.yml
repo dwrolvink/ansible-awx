@@ -15,7 +15,7 @@
       name: "{{ vmName }}"
       state: poweredon
       template: Windows2016Template
-      wait_for customization: yes
+      wait_for_customization: yes
       customization:
       - existing_vm: False
         dns_servers: 
