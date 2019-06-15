@@ -83,9 +83,9 @@ For example, you have `win_domain_group` and `win_domain_user` modules, in the f
 # Deploy Windows VM in Vsphere
 Used:
 - Windows2016 template
-- Template asks for ip, netmask, gateway
+- Uses vmware_guest customization, instead of predefined vmware customization profiles
 - ESXI 6.7
-- Using a VSphere server
+- Using a VSphere server instead of ESXI server
 
 1. Login to your AWX server and login to the awx-task docker container: install Pyvmomi using pip
 ```bash
