@@ -95,19 +95,23 @@ pip install Pyvmomi
 exit
 ```
 
-2. Make a yaml file, like this one: [CloneWindows.yml](https://github.com/dwrolvink/ansible-awx/blob/master/CloneWindows.yml)
+2. Make a yaml file, like this one: [CreateWindowsVMFromTemplate.yml](https://github.com/dwrolvink/ansible-awx/blob/master/CreateWindowsVMFromTemplate.yml)
 3. Create a new template, with these extra_vars:
 ```yml
 ---
 vcenter_username: "administrator@vsphere.local" #change this if you don't use the default
 vcenter_password: "StronkPassword"
 vcenter_hostname: "x.x.x.x" # IP address of your Vsphere server (ESXI should also work, use different login credentials then)
+
 vcenter_datacenter: "Datacenter"  # Name of your datacenter
 vcenter_vm_folder: "/" # Look in Menu/VMs and Templates, and use the folder structure from there (not the datastore)
+
 vcenter_network_name: "VM Network" # This is the default network
+
 domain_username: "domain\\domainuser" # User should have rights to join servers
 domain_password: "StronkPassword123" # Password of the domain user
 domain_name: "domain.name"
+
 local_admin_password: "HorseStapleBattery"
 ```
 
