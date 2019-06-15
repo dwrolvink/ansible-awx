@@ -1,13 +1,24 @@
-# ansible-awx
+
+# Table of Contents
+- [Links and Prerequisites](
+- [Managing Windows hosts with AWX](#managing-windows-hosts-with-awx)
+- [Elevation and Installation of Applications](#elevation-and-installation-of-applications)
+- [Working with Active Directory and further exploration](#working-with-active-directory-and-further-exploration)
+- [Deploy Windows VM in Vsphere](#deploy-windows-vm-in-vsphere)
+
+---
+# Links and prerequisites
+#### ansible-awx
 
 - [Windows modules](https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html)
 - [Ansible - Windows Usage](https://docs.ansible.com/ansible/latest/user_guide/windows_usage.html)
 
-# Installing AWX
+#### Installing AWX
 - Install Centos 7 with GUI
 - [Install AWX](https://www.howtoforge.com/tutorial/how-to-install-ansible-awx-with-docker-on-centos/) or [Install script](https://gist.github.com/dasgoll/7073664f0f7f73f4aa3e7cf8c95a8dbc)
 
 ---
+
 
 # Managing Windows hosts with AWX
 ## Useful commands and other information
