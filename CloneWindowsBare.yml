@@ -15,4 +15,5 @@
       name: "{{ vmName }}"
       template: Windows2016Template
       wait_for_ip_address: no
+      state: present
     register: deploy
