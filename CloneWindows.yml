@@ -15,6 +15,7 @@
       name: "{{ vmName }}"
       state: poweredon
       template: Windows2016Template
+      wait_for customization: yes
       customization:
       - existing_vm: False
         dns_servers: 
@@ -37,5 +38,4 @@
         netmask: "255.255.255.0" 
         gateway: "192.168.178.1"
       wait_for_ip_address: no
-      wait_for_customization: "{{ wait_for_customization }}"
     register: deploy
