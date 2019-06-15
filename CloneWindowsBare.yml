@@ -1,0 +1,19 @@
+---
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create a virtual machine from a template
+    vmware_guest:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: no
+      datacenter: "{{ vcenter_datacenter }}"
+      folder: "{{ vcenter_vm_folder }}"
+      name: "{{ vmName }}"
+      state: poweredon
+      template: Windows2016Template
+      wait_for_ip_address: no
+    register: deploy
