@@ -13,7 +13,6 @@
       datacenter: "{{ vcenter_datacenter }}"
       folder: "{{ vcenter_vm_folder }}"
       name: "{{ vmName }}"
-      state: poweredon
       template: Windows2016Template
       wait_for_ip_address: no
     register: deploy
