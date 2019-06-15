@@ -1,6 +1,6 @@
 
 # Table of Contents
-- [Links and Prerequisites](
+- [Links and Prerequisites](#links-and-prerequisites)
 - [Managing Windows hosts with AWX](#managing-windows-hosts-with-awx)
 - [Elevation and Installation of Applications](#elevation-and-installation-of-applications)
 - [Working with Active Directory and further exploration](#working-with-active-directory-and-further-exploration)
