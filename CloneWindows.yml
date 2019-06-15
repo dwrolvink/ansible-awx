@@ -15,6 +15,7 @@
       name: "{{ vmName }}"
       state: poweredon
       template: Windows2016Template
+      customization_spec: "Windows Customization 1"
       networks:
       - name: "{{ vcenter_network_name }}"
         ip: "{{ VMIP }}"
