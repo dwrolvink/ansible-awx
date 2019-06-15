@@ -16,7 +16,7 @@
       state: poweredon
       template: Windows2016Template
       networks:
-      - name: "Network Adapter 1"
+      - name: "{{ vcenter_network_name }}"
         ip: "{{ VMIP }}"
         netmask: "255.255.255.0" 
         gateway: "192.168.178.1"
