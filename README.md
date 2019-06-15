@@ -79,3 +79,18 @@ Check the [Windows modules](https://docs.ansible.com/ansible/latest/modules/list
 
 For example, you have `win_domain_group` and `win_domain_user` modules, in the following playbook I use those to create a user and a group in a pre-existing OU (and make the user member of the group):
 - [hello_world_ad.yml](https://github.com/dwrolvink/ansible-awx/blob/master/hello_active_directory.yml)
+
+# Deploy Windows VM in Vsphere
+Used:
+- Windows2016 template
+- Template asks for ip, netmask, gateway
+- ESXI 6.7
+- Using a VSphere server
+
+1. Login to your AWX server and login to the awx-task docker container: install Pyvmomi using pip
+```bash
+docker ps #pick name of awx-task
+docker exec -it [name] /bin/bash
+pip install Pyvmomi
+exit
+```
