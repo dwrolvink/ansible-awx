@@ -15,7 +15,22 @@
       name: "{{ vmName }}"
       state: poweredon
       template: Windows2016Template
-      customization_spec: "{{ windows_customization_spec }}"
+      customization:
+      - existing_vm: False
+        dns_servers: 
+        - 192.168.178.107
+        dns_suffix:
+        - "{{ domain_name }}"
+        - fritz.box
+        domain: "{{ domain_name }}"
+        hostname: "{{ vcenter_hostname }}"
+        domainadmin: "{{ domain_username }}"
+        domainadminpassword: "{{ domain_password }}"
+        fullname: "{{ domain_username }}"
+        joindomain: "{{ domain_name }}"
+        orgname: "{{ domain_name }}"
+        password: "{{ local_admin_password }}"
+        timezone: 110
       networks:
       - name: "{{ vcenter_network_name }}"
         ip: "{{ VMIP }}"
