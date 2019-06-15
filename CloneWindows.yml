@@ -23,7 +23,7 @@
         - "{{ domain_name }}"
         - fritz.box
         domain: "{{ domain_name }}"
-        hostname: "{{ vcenter_hostname }}"
+        hostname: "{{ vmName }}"
         domainadmin: "{{ domain_username }}"
         domainadminpassword: "{{ domain_password }}"
         fullname: "{{ domain_username }}"
