@@ -16,9 +16,9 @@
       template: Windows2016Template
       networks:
       - name: VM Network
-        ip: "{{ VMIP }}
+        ip: "{{ VMIP }}"
         netmask: "255.255.255.0" 
-        gateway: 192.168.178.107
+        gateway: "192.168.178.107"
       wait_for_ip_address: no
     delegate_to: localhost
     register: deploy
