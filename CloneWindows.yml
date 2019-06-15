@@ -17,11 +17,8 @@
       template: Windows2016Template
       customization:
       - existing_vm: False
-        dns_servers: 
-        - 192.168.178.107
-        dns_suffix:
-        - "{{ domain_name }}"
-        - fritz.box
+        dns_servers: ["192.168.178.107"]
+        dns_suffix: ["{{ domain_name }}", "fritz.box"]
         domain: "{{ domain_name }}"
         hostname: "{{ vmName }}"
         domainadmin: "{{ domain_username }}"
