@@ -11,7 +11,7 @@
       password: "{{ vcenter_password }}"
       validate_certs: no
       datacenter: "{{ vcenter_datacenter }}"
-      folder: /datacenter1/
+      folder: "{{ vcenter_vm_folder }}"
       name: "{{ vmName }}"
       state: poweredon
       template: Windows2016Template
