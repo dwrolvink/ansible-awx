@@ -14,23 +14,8 @@
       folder: "{{ vcenter_vm_folder }}"
       name: "{{ vmName }}"
       state: poweredon
-      customization:
-        existing_vm: True
-        dns_servers: "{{ dns_server_list }}"
-        dns_suffix: "{{ dns_suffixes }}"
-        domain: "{{ domain_name }}"
-        hostname: "{{ vmName }}"
-        domainadmin: "{{ domain_username }}"
-        domainadminpassword: "{{ domain_password }}"
-        fullname: "{{ domain_username }}"
-        joindomain: "{{ domain_name }}"
-        orgname: "{{ domain_name }}"
-        password: "{{ local_admin_password }}"
-        timezone: 110
       networks:
       - name: "{{ vcenter_network_name }}"
         ip: "{{ VMIP }}"
         netmask: "255.255.255.0" 
         gateway: "192.168.178.1"
-      wait_for_ip_address: no
-    register: deploy
