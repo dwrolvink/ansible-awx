@@ -1,3 +1,4 @@
+---
 - name: Create a virtual machine from a template
   vmware_guest:
     hostname: 192.168.178.109
