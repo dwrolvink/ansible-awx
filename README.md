@@ -115,3 +115,6 @@ domain_name: "domain.name"
 local_admin_password: "HorseStapleBattery"
 ```
 
+4. Create a survey for VMIP and vmName
+5. Run template
+
