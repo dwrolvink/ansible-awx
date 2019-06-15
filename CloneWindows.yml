@@ -1,19 +1,24 @@
 ---
-- name: Create a virtual machine from a template
-  vmware_guest:
-    hostname: 192.168.178.109
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    validate_certs: no
-    folder: /datacenter1/
-    name: "{{ vmName }}"
-    state: poweredon
-    template: Windows2016Template
-    networks:
-    - name: VM Network
-      ip: "{{ VMIP }}
-      netmask: "255.255.255.0" 
-      gateway: 192.168.178.107
-    wait_for_ip_address: no
-  delegate_to: localhost
-  register: deploy
+- name: Create a VM from a template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create a virtual machine from a template
+    vmware_guest:
+      hostname: 192.168.178.109
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: no
+      folder: /datacenter1/
+      name: "{{ vmName }}"
+      state: poweredon
+      template: Windows2016Template
+      networks:
+      - name: VM Network
+        ip: "{{ VMIP }}
+        netmask: "255.255.255.0" 
+        gateway: 192.168.178.107
+      wait_for_ip_address: no
+    delegate_to: localhost
+    register: deploy
