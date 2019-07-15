@@ -1,6 +1,6 @@
 ---
 - name: Group, and User (Member of Group)
-  hosts: all
+  hosts: localhost
   tasks:
   # Note: can't create an OU yet, very diffcult. (Creating an OU won't come up that often anyway though.)
   # So be sure the path is an existing OU.
